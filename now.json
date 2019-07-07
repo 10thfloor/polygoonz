@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/next"
+    }
+  ],
+  "env": {
+    "PINATA_SECRET": "@pinata-secret"
+  },
+  "build": {
+    "env": {
+      "PINATA_SECRET": "@pinata-secret"
+    }
+  }
+}

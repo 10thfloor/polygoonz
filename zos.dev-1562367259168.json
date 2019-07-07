@@ -1,0 +1,171 @@
+{
+  "contracts": {
+    "Polygoons": {
+      "address": "0xA94B7f0465E98609391C623d0560C5720a3f2D33",
+      "constructorCode": "60806040523480156100115760006000fd5b50610017565b613125806100266000396000f3fe",
+      "bodyBytecodeHash": "f944f4d4585f3a58a00c38dba329bcf0217f2ea37f1fcec46fa453fe78261322",
+      "localBytecodeHash": "0a1a073a288596c157a2dc9e51f58c3607dba05812df53044c86ce0cba02d397",
+      "deployedBytecodeHash": "0a1a073a288596c157a2dc9e51f58c3607dba05812df53044c86ce0cba02d397",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_struct<Polygoons.Goon>": {
+          "id": "t_struct<Polygoons.Goon>",
+          "kind": "struct",
+          "label": "Polygoons.Goon",
+          "members": [
+            {
+              "label": "tokenId",
+              "astId": 14,
+              "type": "t_uint256",
+              "src": "270:15:0"
+            },
+            {
+              "label": "metadataUri",
+              "astId": 16,
+              "type": "t_string",
+              "src": "295:18:0"
+            }
+          ]
+        },
+        "t_string": {
+          "id": "t_string",
+          "kind": "elementary",
+          "label": "string"
+        },
+        "t_array:dyn<t_struct<Polygoons.Goon>>": {
+          "id": "t_array:dyn<t_struct<Polygoons.Goon>>",
+          "valueType": "t_struct<Polygoons.Goon>",
+          "length": "dyn",
+          "kind": "array",
+          "label": "Polygoons.Goon[]"
+        },
+        "t_mapping<t_address>": {
+          "id": "t_mapping<t_address>",
+          "valueType": "t_address",
+          "label": "mapping(key => address)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 3087,
+          "type": "t_bool",
+          "src": "757:24:21"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 3089,
+          "type": "t_bool",
+          "src": "876:25:21"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 3138,
+          "type": "t_array:50<t_uint256>",
+          "src": "1891:29:21"
+        },
+        {
+          "contract": "Polygoons",
+          "path": "contracts/Polygoons.sol",
+          "label": "token",
+          "astId": 19,
+          "type": "t_address",
+          "src": "326:28:0"
+        },
+        {
+          "contract": "Polygoons",
+          "path": "contracts/Polygoons.sol",
+          "label": "initialized",
+          "astId": 21,
+          "type": "t_bool",
+          "src": "360:24:0"
+        },
+        {
+          "contract": "Polygoons",
+          "path": "contracts/Polygoons.sol",
+          "label": "goons",
+          "astId": 24,
+          "type": "t_array:dyn<t_struct<Polygoons.Goon>>",
+          "src": "391:19:0"
+        },
+        {
+          "contract": "Polygoons",
+          "path": "contracts/Polygoons.sol",
+          "label": "goonIndexToOwner",
+          "astId": 28,
+          "type": "t_mapping<t_address>",
+          "src": "416:52:0"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": [],
+        "storageUncheckedVars": [
+          {
+            "contract": "Polygoons",
+            "path": "contracts/Polygoons.sol",
+            "label": "goons",
+            "astId": 24,
+            "type": "t_array:dyn<t_struct<Polygoons.Goon>>",
+            "src": "391:19:0"
+          }
+        ],
+        "storageDiff": []
+      }
+    }
+  },
+  "solidityLibs": {},
+  "proxies": {
+    "polygoons/Polygoons": [
+      {
+        "address": "0xA57B8a5584442B467b4689F1144D269d096A3daF",
+        "version": "1.0.0",
+        "implementation": "0xA94B7f0465E98609391C623d0560C5720a3f2D33",
+        "kind": "Upgradeable"
+      }
+    ]
+  },
+  "zosversion": "2.2",
+  "dependencies": {
+    "openzeppelin-eth": {
+      "package": "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab",
+      "version": "2.2.0",
+      "customDeploy": true
+    }
+  },
+  "version": "1.0.0",
+  "proxyAdmin": {
+    "address": "0x2612Af3A521c2df9EAF28422Ca335b04AdF3ac66"
+  }
+}
