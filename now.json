@@ -1,17 +1,10 @@
 {
   "version": 2,
+  "alias": "polygoo.nz",
   "builds": [
     {
       "src": "package.json",
       "use": "@now/next"
     }
-  ],
-  "env": {
-    "PINATA_SECRET": "@pinata-secret"
-  },
-  "build": {
-    "env": {
-      "PINATA_SECRET": "@pinata-secret"
-    }
-  }
+  ]
 }

@@ -27,8 +27,9 @@ const model = {
             const eventSource = new rinkebyWeb3.eth.Contract(contractJSON.abi, "0x037b7E9d7Ce9FB83A2cB9A25a404E604C5bB5D51");
             console.log('Listening for contract events.');
 
+            const network = await web3.eth.net.getId()
 
-            actions.initGame({ web3, events: eventSource.events, accounts, contract: GameContract })
+            actions.initGame({ web3, network, events: eventSource.events, accounts, contract: GameContract })
 
 
         } catch (error) {

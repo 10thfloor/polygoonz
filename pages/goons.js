@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import { useStoreState, useStoreActions } from 'easy-peasy';
+import ConnectWeb3 from '../components/ConnectWeb3';
 
 const MyGoons = () => {
   const accounts = useStoreState(state => state.accounts);
@@ -14,11 +15,16 @@ const MyGoons = () => {
 
   return (
     <div>
+      <ConnectWeb3 />
       <div className='h-screen flex flex-col items-center'>
         {userGoons ? !userGoons.length ? <div className="h-screen flex flex-col items-center justify-center">
-          <p className="mb-10">You don't have a single <span className="inline font-display tracked-wide">Polygoon</span></p>
+          <p className="mb-10 text-xl">You don't have a single <span className="inline font-display tracked-wide text-purple-600">Polygoon</span></p>
+          <div className="bg-grey-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-10" role="alert">
+            <strong className="font-bold">Wait! </strong>
+            <span className="block sm:inline">If you just claimed one, it may take a few minutes to arrive.</span>
+          </div>
           <Link href="/goon">
-            <button className="font-display bg-blue-200 tracking-widest text-blue-500 border border-blue-500 font-bold py-2 px-4 border-b-4 border-green-70 hover:border-green-500 hover:bg-green-200 hover:text-green-500 rounded">Get One</button>
+            <button className="goon-button">Get One</button>
           </Link>
         </div> : userGoons.map((p) => {
           if (p.metadata.keyvalues.goon) {
@@ -31,7 +37,7 @@ const MyGoons = () => {
             return ''
           }
         }).filter(p => p) :
-          <div className="h-screen flex flex-col justify-center items-center text-blue-400">
+          <div className="h-screen flex flex-col justify-center items-center text-xl">
             Wait for it...
           </div>}
       </div>

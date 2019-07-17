@@ -6,10 +6,11 @@ import { generatePNG } from '../../src/polygon';
 const GetGoonButton = ({ goon, canvasRef, svgRef }) => {
 
     const [gettingGoon, setGettingGoon] = useState(false);
-    const [currentRefs, setCurretnRefs] = useState({})
+    const [currentRefs, setCurretnRefs] = useState({});
 
     const accounts = useStoreState(state => state.accounts)
     const contract = useStoreState(state => state.contract)
+    const network = useStoreState(state => state.network)
     const events = useStoreState(state => state.events)
 
     useEffect(() => {
@@ -50,12 +51,17 @@ const GetGoonButton = ({ goon, canvasRef, svgRef }) => {
     }
 
     if (!accounts.length) {
-        return <h4>Hello. You'll need <a className="underline text-purple-600 font-bold" target="_blank" href="https://chrome.google.com/webstore/detail/dapper/pghmmgdinmfblodenlenkcnmndlnffeo">Dapper</a> to claim this <span className="font-display tracked-wide">Polygoon</span></h4>
+        return <h4 className="text-xl">Hello. You'll need to <a className="underline text-blue-600" target="_blank" href="https://chrome.google.com/webstore/detail/dapper/pghmmgdinmfblodenlenkcnmndlnffeo">install</a> or <a className="underline text-blue-600" href="/goon">activate</a> <span className="text-purple-600 font-bold"><a href="https://www.meetdapper.com/">Dapper</a></span> to claim this <span className="font-display tracked-wide hover:text-purple-600"><a href="/wtf">Polygoon</a></span></h4>
     } else {
-        return (
-            <button className={`mb-10 font-display tracking-widest bg-blue-200 border-green-70 hover:border-green-500 hover:bg-green-200 hover:text-green-500 text-blue-500 border border-blue-500 font-bold py-2 px-4 border-b-4 rounded`} disabled={!accounts.length || gettingGoon} onClick={getGoon}>{!gettingGoon ? 'Claim This Goon' : 'Getting Goon ...'}</button>
-        )
+        if (network !== process.env.ACTIVE_NETWORK) {
+            return <h4 className="text-xl">Hello. You'll to connect to the <a className="underline text-purple-600 font-bold" target="_blank" href="https://www.rinkeby.io/#stats">Rinkeby</a> network to claim this <span className="font-display tracked-wide hover:text-purple-600"><a href="/wtf">Polygoon</a></span></h4>
+        } else {
+            return (
+                <button className={`goon-button ${gettingGoon ? 'cursor-wait' : ''}`} disabled={!accounts.length || gettingGoon} onClick={getGoon}>{!gettingGoon ? 'Claim This Goon' : 'Getting Goon ...'}</button>
+            )
+        }
     }
+
 }
 
 export default GetGoonButton;

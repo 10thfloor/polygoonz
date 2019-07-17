@@ -4,6 +4,7 @@ export const pinFileToIPFS = (formData, ownerAddress, goon) => {
     const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`;
     const metadata = JSON.stringify({
         name: ownerAddress,
+        network: 'rinkeby',
         keyvalues: {
             goon: JSON.stringify(goon)
         }
