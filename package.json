@@ -1,5 +1,5 @@
 {
-  "name": "polygoons",
+  "name": "polygoonz",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,19 +9,11 @@
     "build": "next build",
     "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pnavarrc/polygoons.git"
-  },
   "keywords": [
     "noops"
   ],
-  "author": "Pablo Navarro <pnavarrc@gmail.com>",
+  "author": "Mackenzie Kieran <mackenzie.kieran@dapperlabs.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pnavarrc/polygoons/issues"
-  },
-  "homepage": "https://github.com/pnavarrc/polygoons#readme",
   "dependencies": {
     "@pinata/sdk": "^1.0.18",
     "axios": "^0.19.0",
@@ -52,6 +44,7 @@
     "eslint": "^6.0.1",
     "eslint-plugin-react": "^7.14.2",
     "prettier": "^1.18.2",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "truffle-security": "^1.5.5"
   }
 }

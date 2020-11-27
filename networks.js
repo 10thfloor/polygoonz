@@ -20,7 +20,7 @@ module.exports = {
       events: {},
       provider: function () {
         return new HDWalletProvider([
-          //  Deplyment account create in Truffle Console. Use only for ZOS deployments, not testing.
+          //  Deplyment account created in Truffle Console. Use only for ZOS deployments, not testing.
           //  Public Address: 0x87A07D2c2Bdfb082e1811f1945217962d078e494
           /*  Private Key */ secrets.rinkebyKey,
         ], 'https://rinkeby.infura.io/v3/b7922ee061c44d33a236a2b35210cae9', 0, 1)

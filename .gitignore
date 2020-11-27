@@ -65,3 +65,5 @@ typings/
 
 # secrets!
 secrets.json
+
+.vercel

@@ -28,8 +28,9 @@ const model = {
             console.log('Listening for contract events.');
 
             const network = await web3.eth.net.getId()
+            const isDapper = window.web3.currentProvider.constructor.name === 'DapperLegacyProvider';
 
-            actions.initGame({ web3, network, events: eventSource.events, accounts, contract: GameContract })
+            actions.initGame({ web3, network, isDapper, events: eventSource.events, accounts, contract: GameContract })
 
 
         } catch (error) {
